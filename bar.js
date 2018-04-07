@@ -56,7 +56,7 @@ d3.csv("/data/feat_imps.csv", function (error, data) {
 	      .attr("class", "bar")
 	      .attr("x", function(d) { return x(d.attribute); })
 	      .attr("y", function(d) { return y(d.importance); })
-	      .attr("width", 40)
+	      .attr("width", function (d) { return (width / data.length); })
 	      .attr("height", function(d) { return height - y(d.importance); })
 	      .on("mouseover", mouseover)
 	      .on("mouseout", mouseout)
